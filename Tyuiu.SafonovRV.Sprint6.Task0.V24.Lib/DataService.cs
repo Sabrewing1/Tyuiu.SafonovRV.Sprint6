@@ -9,7 +9,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task0.V24.Lib
 
         public double Calculate(int x)
         {
-            return Math.Pow((x - 1), 3 * x + 1);
+            return Math.Round(Math.Pow((x - 1), 3 * x + 1), 3);
         }
     }
 }
