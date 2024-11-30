@@ -171,6 +171,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task0.V24
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Спринт 6 I Таск 0 I Вариант 24 I Сафонов Р.В";
+            Load += FormMain_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxFormula).EndInit();
             groupBoxOfValue_x.ResumeLayout(false);
             groupBoxOfValue_x.PerformLayout();

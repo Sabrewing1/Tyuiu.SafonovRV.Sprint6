@@ -12,7 +12,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task0.V24
         {
             MessageBox.Show("Таск 0 выполнил студент группы АСОиУб-24-1 Сафонов Руслан Васильевич", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
 
         private void buttonDoneClick(object sender, EventArgs e)
         {
@@ -34,6 +34,10 @@ namespace Tyuiu.SafonovRV.Sprint6.Task0.V24
             }
 
         }
-  
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
