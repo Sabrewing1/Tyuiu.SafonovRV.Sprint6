@@ -49,7 +49,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task1.V4
                 textBoxResult.AppendText("+----------+------------+" + Environment.NewLine);
                 for (int i = 0; i <= len - 1; i++)
                 {
-                    strLine = String.Format("|{0,5:d}     |  {1, 6:f2}    |", startStep, valueArray[i]);
+                    strLine = String.Format("|{0,5:d}     |  {1, 5:f2}    |", startStep, valueArray[i]);
                     textBoxResult.AppendText(strLine + Environment.NewLine);
                     startStep++;
                 }
