@@ -29,8 +29,8 @@ namespace Tyuiu.SafonovRV.Sprint6.Task5.V21
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBox1 = new GroupBox();
             label1 = new Label();
             buttonDone = new Button();
@@ -39,6 +39,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task5.V21
             chartOut = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxIn = new GroupBox();
             dataGridViewNums = new DataGridView();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartOut).BeginInit();
             groupBoxIn.SuspendLayout();
@@ -108,14 +109,14 @@ namespace Tyuiu.SafonovRV.Sprint6.Task5.V21
             // 
             chartOut.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chartOut.BackColor = SystemColors.ControlLightLight;
-            chartArea2.Name = "ChartArea1";
-            chartOut.ChartAreas.Add(chartArea2);
+            chartArea3.Name = "ChartArea1";
+            chartOut.ChartAreas.Add(chartArea3);
             chartOut.Location = new Point(395, 228);
             chartOut.Margin = new Padding(3, 2, 3, 2);
             chartOut.Name = "chartOut";
-            series2.ChartArea = "ChartArea1";
-            series2.Name = "Series1";
-            chartOut.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Name = "Series1";
+            chartOut.Series.Add(series3);
             chartOut.Size = new Size(697, 440);
             chartOut.TabIndex = 9;
             chartOut.Text = "chart1";
@@ -144,11 +145,21 @@ namespace Tyuiu.SafonovRV.Sprint6.Task5.V21
             dataGridViewNums.Size = new Size(346, 487);
             dataGridViewNums.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 92);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 10);
+            button1.TabIndex = 11;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1129, 728);
+            Controls.Add(button1);
             Controls.Add(groupBoxIn);
             Controls.Add(chartOut);
             Controls.Add(buttonInfo);
@@ -181,5 +192,6 @@ namespace Tyuiu.SafonovRV.Sprint6.Task5.V21
         private System.Windows.Forms.DataVisualization.Charting.Chart chartOut;
         private GroupBox groupBoxIn;
         private DataGridView dataGridViewNums;
+        private Button button1;
     }
 }
