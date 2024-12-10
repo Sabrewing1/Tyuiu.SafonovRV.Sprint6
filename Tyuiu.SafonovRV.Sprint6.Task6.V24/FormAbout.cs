@@ -12,19 +12,17 @@ namespace Tyuiu.SafonovRV.Sprint6.Task6.V24
 {
     public partial class FormAbout : Form
     {
-        
-
-        private void InitializeComponent()
+        public FormAbout()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
         }
 
-        private void ButtonOk_NVR_Click(object sender, EventArgs e)
+        private void FormAbout_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void TextBoxInfo_NVR_TextChanged(object sender, EventArgs e)
+        private void ButtonOk_SRV_Click(object sender, EventArgs e)
         {
 
         }

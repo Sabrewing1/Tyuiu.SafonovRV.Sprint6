@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-
-using tyuiu.cources.programming.interfaces.Sprint6;
+﻿using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.SafonovRV.Sprint6.Task6.V24.Lib
 {
     public class DataService : ISprint6Task6V24
     {
-        public string CollectTextFromFile(string path)
+       
+        public string CollectTextFromFile(string str, string path)
         {
             string reStr = "";
             using (StreamReader reader = new StreamReader(path))
@@ -19,12 +13,17 @@ namespace Tyuiu.SafonovRV.Sprint6.Task6.V24.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                   
-                   reStr = reStr + " " + line.Split(' ')[0];
-                    
+
+                    reStr = reStr + " " + line.Split(' ')[0];
+
                 }
             }
             return reStr;
         }
     }
-}
+    }
+
+
+        
+    
+

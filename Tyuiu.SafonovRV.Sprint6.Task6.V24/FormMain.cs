@@ -1,45 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
+using Tyuiu.SafonovRV.Sprint6.Task6.V24.Lib;
 
-using Tyuiu.NasyrovaVR.Sprint6.Task6.V24.Lib;
-
-namespace Tyuiu.NasyrovaVR.Sprint6.Task6.V24
+namespace Tyuiu.SafonovRV.Sprint6.Task6.V24
 {
-    public partial class FormMain_SRV : Form
+    public partial class FormMain : Form
     {
-        public FormMain_SRV()
+        public FormMain()
         {
             InitializeComponent();
         }
 
-        string openFilePath;
-        DataService ds = new DataService();
+        private void FormMain_Load(object sender, EventArgs e)
+        {
 
-        private void ButtonDone_NVR_Click(object sender, EventArgs e)
+        }
+
+        private void ButtonInfo_SRV_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+
+        }
+
+        private void ButtonDone_SRV_Click(object sender, EventArgs e)
         {
             TextBoxOutput_SRV.Text = ds.CollectTextFromFile(openFilePath);
         }
 
-        private void ButtonInfo_NVR_Click(object sender, EventArgs e)
+        private void ButtonOpen_SRV_Click(object sender, EventArgs e)
         {
-            FormAbout formAbout = new FormAbout();
-            formAbout.ShowDialog();
-        }
-
-        private void ButtonOpen_NVR_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog_NVR.ShowDialog();
-            openFilePath = OpenFileDialog_NVR.FileName;
+            OpenFileDialog_SRV.ShowDialog();
+            openFilePath = OpenFileDialog_SRV.FileName;
             TextBoxInput_SRV.Text = File.ReadAllText(openFilePath);
-            GroupBoxOutput_NVR.Text = GroupBoxOutput_NVR.Text + " " + OpenFileDialog_NVR.FileName;
+            GroupBoxOutput_SRV.Text = GroupBoxOutput_SRV.Text + " " + OpenFileDialog_SRV.FileName;
             ButtonDone_SRV.Enabled = true;
 
         }

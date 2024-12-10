@@ -29,73 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            this.TextBoxInfo_SRV = new System.Windows.Forms.TextBox();
-            this.ButtonOk_NVR = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            TextBoxInfo_SRV = new TextBox();
+            ButtonOk_SRV = new Button();
+            SuspendLayout();
             // 
             // TextBoxInfo_SRV
             // 
-            this.TextBoxInfo_SRV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxInfo_SRV.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxInfo_SRV.Location = new System.Drawing.Point(181, 12);
-            this.TextBoxInfo_SRV.Multiline = true;
-            this.TextBoxInfo_SRV.Name = "TextBoxInfo_SRV";
-            this.TextBoxInfo_SRV.ReadOnly = true;
-            this.TextBoxInfo_SRV.Size = new System.Drawing.Size(395, 250);
-            this.TextBoxInfo_SRV.TabIndex = 0;
-            this.TextBoxInfo_SRV.TabStop = false;
-            this.TextBoxInfo_SRV.Text = resources.GetString("TextBoxInfo_SRV.Text");
-            this.TextBoxInfo_SRV.TextChanged += new System.EventHandler(this.TextBoxInfo_NVR_TextChanged);
+            TextBoxInfo_SRV.BackColor = SystemColors.Menu;
+            TextBoxInfo_SRV.Location = new Point(0, 0);
+            TextBoxInfo_SRV.Multiline = true;
+            TextBoxInfo_SRV.Name = "TextBoxInfo_SRV";
+            TextBoxInfo_SRV.Size = new Size(379, 188);
+            TextBoxInfo_SRV.TabIndex = 0;
+            TextBoxInfo_SRV.Text = resources.GetString("TextBoxInfo_SRV.Text");
             // 
-            // ButtonOk_NVR
+            // ButtonOk_SRV
             // 
-            this.ButtonOk_NVR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOk_NVR.BackColor = System.Drawing.SystemColors.Control;
-            this.ButtonOk_NVR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonOk_NVR.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonOk_NVR.Location = new System.Drawing.Point(492, 316);
-            this.ButtonOk_NVR.Name = "ButtonOk_NVR";
-            this.ButtonOk_NVR.Size = new System.Drawing.Size(96, 31);
-            this.ButtonOk_NVR.TabIndex = 1;
-            this.ButtonOk_NVR.Text = "Ок";
-            this.ButtonOk_NVR.UseVisualStyleBackColor = false;
-            this.ButtonOk_NVR.Click += new System.EventHandler(this.ButtonOk_NVR_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Tyuiu.NasyrovaVR.Sprint6.Task6.V24.Properties.Resources.фотка;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 166);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            ButtonOk_SRV.Location = new Point(285, 155);
+            ButtonOk_SRV.Name = "ButtonOk_SRV";
+            ButtonOk_SRV.Size = new Size(75, 23);
+            ButtonOk_SRV.TabIndex = 1;
+            ButtonOk_SRV.Text = "OK";
+            ButtonOk_SRV.UseVisualStyleBackColor = true;
+            ButtonOk_SRV.Click += ButtonOk_SRV_Click;
             // 
             // FormAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 359);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ButtonOk_NVR);
-            this.Controls.Add(this.TextBoxInfo_SRV);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormAbout";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "О программе";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(389, 199);
+            Controls.Add(ButtonOk_SRV);
+            Controls.Add(TextBoxInfo_SRV);
+            Name = "FormAbout";
+            Text = "о программе";
+            Load += FormAbout_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox TextBoxInfo_SRV;
-        private System.Windows.Forms.Button ButtonOk_NVR;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private TextBox TextBoxInfo_SRV;
+        private Button ButtonOk_SRV;
     }
 }
