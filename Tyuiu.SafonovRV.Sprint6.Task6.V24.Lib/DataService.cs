@@ -6,14 +6,14 @@ namespace Tyuiu.SafonovRV.Sprint6.Task6.V24.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            string reStr = "";
+            string reStr = " ";
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
 
-                    reStr = reStr + "EovFJ Vud RgdW KwQBrOM Ewyq" + line.Split(' ')[0];
+                    reStr = reStr + " " + line.Split(' ')[0];
 
                 }
             }
