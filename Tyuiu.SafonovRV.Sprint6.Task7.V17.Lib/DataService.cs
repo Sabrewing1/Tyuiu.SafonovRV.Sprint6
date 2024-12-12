@@ -32,7 +32,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17.Lib
                 {
                     if (r == 4 && matrix[r, c] < 0)
                     {
-                        matrix[r, c] = 9;
+                        matrix[r, c] = 4;
                     }
                 }
             }
