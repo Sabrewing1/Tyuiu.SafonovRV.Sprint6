@@ -13,7 +13,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             openFileDialogTask_SRV.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Всефайлы(*.*)|*.*";
             saveFileDialogMatrix_SRV.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Всефайлы(*.*)|*.*";
         }
-        string path = Path.Combine(new string[] { Path.GetTempPath(), "InPutDataFileTask7V17.csv" });
+        string path; 
         static int rows;
         static int columns;
 
@@ -44,42 +44,28 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
         }
         private void buttonDone_SRV_Click(object sender, EventArgs e)
         {
-            saveFileDialogMatrix_SRV.InitialDirectory = Path.Combine(new string[] { Path.GetTempPath() });
-            openFileDialogTask_SRV.ShowDialog();
-            path = openFileDialogTask_SRV.FileName;
 
             int[,] arrayValues = LoadFromFileData(path);
 
-            dataGridViewIn_SRV.ColumnCount = columns;
-            dataGridViewIn_SRV.RowCount = rows;
             dataGridViewOut_SRV.ColumnCount = columns;
             dataGridViewOut_SRV.RowCount = rows;
 
             for (int i = 0; i < columns; i++)
             {
-                dataGridViewIn_SRV.Columns[i].Width = 35;
                 dataGridViewOut_SRV.Columns[i].Width = 35;
             }
-
-            for (int r = 0; r < rows; r++)
-            {
-                for (int c = 0; c < columns; c++)
-                {
-                    dataGridViewIn_SRV.Rows[r].Cells[c].Value = arrayValues[r, c];
-                }
-            }
+  
 
             arrayValues = ds.GetMatrix(path);
             for (int r = 0; r < rows; r++)
             {
                 for (int c = 0; c < columns; c++)
                 {
-                    dataGridViewOut_SRV.Rows[r].Cells[c].Value = arrayValues[r, c] ;
+                    dataGridViewOut_SRV.Rows[r].Cells[c].Value = arrayValues[r, c];
 
                 }
             }
-            buttonDone_SRV.Enabled = true;
-            buttonSave_SRV.Enabled = true;
+            
         }
 
         private void buttonInfo_SRV_Click(object sender, EventArgs e)
@@ -88,7 +74,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
 
         }
 
-        
+
 
         private void buttonSave_SRV_Click(object sender, EventArgs e)
         {
@@ -189,7 +175,33 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             base.OnMouseLeave(e);
         }
 
-        
+        private void buttonOpenFile_SRV_Click(object sender, EventArgs e)
+        {
+            saveFileDialogMatrix_SRV.InitialDirectory = Path.Combine(new string[] { Path.GetTempPath() });
+            openFileDialogTask_SRV.ShowDialog();
+            path = openFileDialogTask_SRV.FileName;
+
+            int[,] arrayValues = LoadFromFileData(path);
+
+            dataGridViewIn_SRV.ColumnCount = columns;
+            dataGridViewIn_SRV.RowCount = rows;
+
+            for (int i = 0; i < columns; i++)
+            {
+                dataGridViewIn_SRV.Columns[i].Width = 35;
+            }
+
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < columns; c++)
+                {
+                    dataGridViewIn_SRV.Rows[r].Cells[c].Value = arrayValues[r, c];
+                }
+            }
+
+            
         }
     }
+    }
+
 

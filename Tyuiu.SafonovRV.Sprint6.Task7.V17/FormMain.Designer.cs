@@ -70,7 +70,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             buttonOpenFile_SRV.Size = new Size(32, 32);
             buttonOpenFile_SRV.TabIndex = 1;
             buttonOpenFile_SRV.UseVisualStyleBackColor = true;
-            buttonOpenFile_SRV.Click += buttonDone_SRV_Click;
+            buttonOpenFile_SRV.Click += buttonOpenFile_SRV_Click;
             // 
             // buttonSave_SRV
             // 
