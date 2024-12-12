@@ -114,7 +114,6 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             groupBoxCondition_SRV.TabIndex = 1;
             groupBoxCondition_SRV.TabStop = false;
             groupBoxCondition_SRV.Text = resources.GetString("groupBoxCondition_SRV.Text");
-            groupBoxCondition_SRV.Enter += groupBox1_Enter;
             // 
             // groupBoxInPut_SRV
             // 
@@ -167,7 +166,6 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             Controls.Add(panelInput_SRV);
             Name = "FormMain";
             Text = "Спринт 6 | Таск 7 | Вариант 17 | Сафонов Р.В";
-           
             panelInput_SRV.ResumeLayout(false);
             groupBoxCondition_SRV.ResumeLayout(false);
             groupBoxInPut_SRV.ResumeLayout(false);
@@ -177,14 +175,12 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
             ResumeLayout(false);
         }
 
-        
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-#endregion
+
+
+
+        #endregion
         private Button buttonSave_SRV;
         private Button buttonInfo_SRV;
         private Button buttonDone_SRV;
