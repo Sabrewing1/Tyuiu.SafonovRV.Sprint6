@@ -4,38 +4,35 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17.Lib
 {
     public class DataService : ISprint6Task7V17
     {
-        public int[,] GetMatrix(string path)
-        {
-            string file = File.ReadAllText(path);
-            file = file.Replace('\n', '\r');
-            string[] line = file.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            int rows = line.Length;
-            int cols = line[0].Split(';').Length;
-            int[,] matrix = new int[rows, cols];
-
-            for (int i = 0; i < rows; i++)
+        
+            public int[,] GetMatrix(string path)
             {
-                string[] values = line[i].Split(';');
-                for (int j = 0; j < cols; j++)
+                string fileData = File.ReadAllText(path);
+                string[] lines = fileData.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+                int rows = lines.Length;
+                int cols = lines[0].Split(';').Length;
+                int[,] mtrx = new int[rows, cols];
+
+                for (int r = 0; r < rows; r++)
                 {
-                    matrix[i, j] = Convert.ToInt32(values[j]);
-                }
-            }
-            int row = matrix.GetLength(0);
-            int columns = matrix.GetLength(1);
-            for (int r = 0; r < row; r++)
-            {
-                for (int c = 0; c < columns; c++)
-                {
-                    if (r == 4 && matrix[r, c] < 0)
+                    string[] line_r = lines[r].Split(';');
+                    for (int c = 0; c < cols; c++)
                     {
-                        matrix[r, c] = 9;
+                        mtrx[r, c] = Convert.ToInt32(line_r[c]);
                     }
                 }
+                for (int i = 0; i < mtrx.GetLength(0); i++)
+                {
+                    if (mtrx[i, 2] <= 5 && mtrx[i, 2] >= 1)
+                    {
+                        mtrx[i, 2] = 4;
+                    }
+
+
+                }
+                return mtrx;
+
             }
-            return matrix;
         }
     }
-}
 

@@ -42,6 +42,7 @@
             TextBoxInfo_SRV.Size = new Size(379, 188);
             TextBoxInfo_SRV.TabIndex = 0;
             TextBoxInfo_SRV.Text = resources.GetString("TextBoxInfo_SRV.Text");
+            TextBoxInfo_SRV.TextChanged += TextBoxInfo_SRV_TextChanged;
             // 
             // ButtonOk_SRV
             // 

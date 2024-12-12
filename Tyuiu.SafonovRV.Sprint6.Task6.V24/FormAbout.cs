@@ -26,5 +26,10 @@ namespace Tyuiu.SafonovRV.Sprint6.Task6.V24
         {
 
         }
+
+        private void TextBoxInfo_SRV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
