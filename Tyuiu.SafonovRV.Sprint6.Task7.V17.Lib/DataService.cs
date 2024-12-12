@@ -7,7 +7,8 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17.Lib
 
         public int[,] GetMatrix(string path)
         {
-            string file = File.ReadAllText(path);
+            
+        string file = File.ReadAllText(path);
             file = file.Replace('\n', '\r');
             string[] line = file.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 

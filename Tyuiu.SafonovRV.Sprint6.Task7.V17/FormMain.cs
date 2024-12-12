@@ -13,8 +13,8 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                 openFileDialogTask_SRV.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Всефайлы(*.*)|*.*";
                 saveFileDialogMatrix_SRV.Filter = "Значения, разделенные запятыми(*.csv)|*.csv|Всефайлы(*.*)|*.*";
             }
-            static string openFilePath;
-            static int rows;
+        string path = Path.Combine(new string[] { Path.GetTempPath(), "InPutDataFileTask7V17.csv" });
+        static int rows;
             static int columns;
 
             DataService ds = new DataService();
@@ -41,10 +41,10 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                 }
                 return arrayValues;
             }
-            private void buttonDone_IME_Click(object sender, EventArgs e)
+            private void buttonDone_SRV_Click(object sender, EventArgs e)
             {
                 int[,] arrayValues = new int[rows, columns];
-                arrayValues = ds.GetMatrix(openFilePath);
+                arrayValues = ds.GetMatrix(path);
 
                 for (int r = 0; r < rows; r++)
                 {
@@ -57,18 +57,18 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                 buttonSave_SRV.Enabled = true;
             }
 
-            private void buttonInfo_IME_Click(object sender, EventArgs e)
+            private void buttonInfo_SRV_Click(object sender, EventArgs e)
             {
-                FormAbout formAbout = new FormAbout();
-                formAbout.ShowDialog();
+            MessageBox.Show("Таск 7 выполнил студент группы АСОиУб-24-1 Сафонов Руслан Васильевич", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             }
 
             private void buttonOpenFile_SRV_Click(object sender, EventArgs e)
             {
                 openFileDialogTask_SRV.ShowDialog();
-                openFilePath = openFileDialogTask_SRV.FileName;
+                path = openFileDialogTask_SRV.FileName;
 
-                int[,] arrayValues = LoadFromFileData(openFilePath);
+                int[,] arrayValues = LoadFromFileData(path);
 
                 dataGridViewIn_SRV.ColumnCount = columns;
                 dataGridViewIn_SRV.RowCount = rows;
@@ -89,24 +89,24 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                     }
                 }
 
-                arrayValues = ds.GetMatrix(openFilePath);
+                arrayValues = ds.GetMatrix(path);
                 buttonDone_SRV.Enabled = true;
             }
 
-            private void buttonSave_IME_Click(object sender, EventArgs e)
+            private void buttonSave_SRV_Click(object sender, EventArgs e)
             {
                 saveFileDialogMatrix_SRV.FileName = "OutPutFileTask7V17.csv";
-                saveFileDialogMatrix_SRV.InitialDirectory = Directory.GetCurrentDirectory();
-                saveFileDialogMatrix_SRV.ShowDialog();
+                saveFileDialogMatrix_SRV.InitialDirectory =  Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V17.csv" });
+            saveFileDialogMatrix_SRV.ShowDialog();
 
-                string path = saveFileDialogMatrix_SRV.FileName;
+                string outputpath = saveFileDialogMatrix_SRV.FileName;
 
-                FileInfo fileInfo = new FileInfo(path);
+                FileInfo fileInfo = new FileInfo(outputpath);
                 bool fileExists = fileInfo.Exists;
 
                 if (fileExists)
                 {
-                    File.Delete(path);
+                    File.Delete(outputpath);
                 }
 
                 int rows = dataGridViewOut_SRV.RowCount;
@@ -128,7 +128,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                         }
                     }
                 }
-                File.AppendAllText(path, str + Environment.NewLine);
+                File.AppendAllText(outputpath, str + Environment.NewLine);
                 str = "";
             }
             private void File_Load_IME(object sender, EventArgs e)
@@ -138,29 +138,11 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
 
                 dataGridViewOut_SRV.RowCount = 50;
                 dataGridViewIn_SRV.RowCount = 50;
-                panelInput_SRV.Width = this.Width / 2;
-                panelOut_SRV.Width = this.Width / 2;
+            groupBoxInPut_SRV.Width = this.Width / 2;
+            groupBoxOutPut_SRV.Width = this.Width / 2;
             }
 
-            private void buttonInfo_SRV_MouseEnter(object sender, EventArgs e)
-            {
-                toolTipButton_SRV.ToolTipTitle = "Справка";
-            }
-
-            private void buttonDone_SRV_MouseEnter(object sender, EventArgs e)
-            {
-                toolTipButton_SRV.ToolTipTitle = "Выполнить";
-            }
-
-            private void buttonSave_SRV_MouseEnter(object sender, EventArgs e)
-            {
-                toolTipButton_SRV.ToolTipTitle = "Сохранить в файл";
-            }
-
-            private void buttonOpenFile_SRV_MouseEnter(object sender, EventArgs e)
-            {
-                toolTipButton_SRV.ToolTipTitle = "Открыть файл";
-            }
+            
 
             private void buttonOpenFile_SRV_MouseMove(object sender, MouseEventArgs e)
             {
@@ -210,14 +192,6 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17
                 base.OnMouseLeave(e);
             }
 
-            private void textBoxTask_SRV_TextChanged(object sender, EventArgs e)
-            {
-
-            }
-
-            private void dataGridViewOut_SRV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-            {
-
-            }
+            
         }
     }
