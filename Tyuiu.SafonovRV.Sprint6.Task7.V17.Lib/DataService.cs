@@ -30,7 +30,7 @@ namespace Tyuiu.SafonovRV.Sprint6.Task7.V17.Lib
             {
                 for (int c = 0; c < columns; c++)
                 {
-                    if (r == 1 && matrix[r, c] < 0)
+                    if (r == 1 && matrix[r, c] % 2 == 0)
                     {
                         matrix[r, c] = 4;
                     }
